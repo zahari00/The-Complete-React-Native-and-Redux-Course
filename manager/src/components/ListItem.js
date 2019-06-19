@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Picker, Text, View, TouchableOpacity } from 'react-native';
-import { Card, CardItem, Input, Button, Spinner } from './common';
+import { Text, TouchableOpacity } from 'react-native';
+import { CardItem } from './common';
 import { Actions } from 'react-native-router-flux';
 
 class ListItem extends Component {

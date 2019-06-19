@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Text, ListView } from 'react-native';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import { employeesFetch } from '../actions'
-import { Card, CardItem, Input, Button, Spinner } from './common';
+import { Card } from './common';
 import ListItem from './ListItem'
 
 class EmployeeList extends Component {
@@ -16,7 +15,7 @@ class EmployeeList extends Component {
   render() {
     return (
       <Card>
-        {this.props.employees.map(item=> <ListItem key={item.uid} employee={item} />)}
+        {this.props.employees.map(item => <ListItem key={item.uid} employee={item} />)}
       </Card>
     );
   }

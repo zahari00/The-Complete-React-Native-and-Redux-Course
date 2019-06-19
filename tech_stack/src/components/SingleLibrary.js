@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableWithoutFeedback, LayoutAnimation, UIManager } from 'react-native';
-import { CardItem, Card, Button } from './common';
+import { CardItem, Card } from './common';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 

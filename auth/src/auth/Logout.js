@@ -1,5 +1,4 @@
 import React from 'react';
-import { Text, StyleSheet, View } from 'react-native';
 import { Button } from '../components';
 import firebase from 'firebase';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 import firebase from 'firebase';
 import { Header, Spinner } from './components';
 import LoginForm from './auth/LoginForm';

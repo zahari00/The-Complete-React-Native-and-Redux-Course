@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Picker, Text, View } from 'react-native';
 import { connect } from 'react-redux';
-import { Card, CardItem, Input, Button, Spinner } from './common';
+import { Card, CardItem, Input } from './common';
 import { changeEmployee, createEmployee } from '../actions'
 
 class EmployeeForm extends Component {
