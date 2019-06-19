@@ -1,6 +1,5 @@
 
 export default (state = null, action) => {
-    console.log('Selection reducer', action)
     switch (action.type) {
         case 'select_library': 
             return action.payload

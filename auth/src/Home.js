@@ -33,13 +33,9 @@ class Home extends React.Component {
         })
     }
 
-    onChange() {
-        console.log('onchange')
-    }
 
     renderElement() {
         if(this.state.loading) {
-            console.log('laoding')
             return <View style={{ paddingTop: 50 }}><Spinner /></View>
         } else if(this.state.isAuthed) {
             return <Logout />

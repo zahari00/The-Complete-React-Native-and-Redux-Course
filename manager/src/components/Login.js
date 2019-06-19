@@ -5,8 +5,10 @@ import { Card, CardItem, Input, Button, Spinner } from './common';
 import { change, logIn } from '../actions';
 
 class Login extends Component {
+
   render() {
     const { change, data, logIn } = this.props
+
 
     return (
       <Card>

@@ -1,6 +1,6 @@
 const INITIAL_STATE = {
-    email: '',
-    password: '',
+    email: 'test@test.com',
+    password: 'test1234',
     loading: false,
     error: '',
     user: null
@@ -31,7 +31,6 @@ export default (state = INITIAL_STATE, action) => {
             } else if (payload.error) {
                 return setState(state, ['error', 'loading'], [payload.error.message ? payload.error.message : payload.error, false]);
             }
-
             return setState(state, ['user', 'loading'], [payload, false]);
 
         default:

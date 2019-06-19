@@ -12,8 +12,16 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import reducers from './reducers';
 import firebase from 'firebase';
-import Login from './components/Login'
 import ReduxThunk from 'redux-thunk';
+
+// scenes components
+import Login from './components/Login';
+import EmployeeList from './components/EmployeeList';
+import CreateEmployee from './components/EmployeeCreate'
+import EmployeeUpdate from './components/EmployeeUpdate'
+
+// routing
+import { Scene, Router, Actions } from 'react-native-router-flux'
 
 export default class App extends Component {
   componentWillMount() {
@@ -32,10 +40,41 @@ export default class App extends Component {
   render() {
     return (
       <Provider store={createStore(reducers, {}, applyMiddleware(ReduxThunk))}>
-        <View>
-          <Login />
-        </View>
-      </Provider>
+        <Router>
+          <Scene key="root" hideNavBar>
+            {/* auth */}
+            <Scene key="auth" initial>
+              <Scene key="login" component={Login} title="Login" initial />
+            </Scene>
+            {/* end auth */}
+
+            {/* main */}
+            <Scene key="main" >
+              <Scene
+                rightTitle="Add"
+                onRight={() => Actions.createEmployee()}
+                key="employeeList"
+                component={EmployeeList}
+                title="Employees"
+                initial
+              />
+              <Scene
+                key="createEmployee"
+                component={CreateEmployee}
+                title="Add new employee"
+              />
+              <Scene
+                key="employeeUpdate"
+                component={EmployeeUpdate}
+                title="Update Employee"
+              />
+            </Scene>
+            {/* end main */}
+
+          </Scene>
+        </Router>
+
+      </Provider >
     );
   }
 }

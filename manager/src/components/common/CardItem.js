@@ -15,7 +15,7 @@ function CardItem(props) {
         },
     })
     return (
-        <View style={styles.card}>
+        <View style={[styles.card, props.style]}>
             {props.children}
         </View>
     )
